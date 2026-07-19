@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Live Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="stream-area" id="streamArea">
+        <span style="color:#555;">🎥 Стрим (имитация)</span>
+        <div class="overlay">
+            <div class="live-badge">LIVE</div>
+            <div class="viewer-count" id="viewerCount">0</div>
+            <div class="streamer-info">
+                <div class="avatar">Z</div>
+                <div class="info-text">
+                    <div class="name">Ryzen_AI</div>
+                    <div class="following">Подписчики: <span id="followers">0</span></div>
+                </div>
+            </div>
+            <div class="chat-overlay" id="chatOverlay"></div>
+            <div class="donations" id="donations"></div>
+        </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <div class="msg"><span class="user">Ryzen_AI:</span> Симуляция запущена! 🚀</div>
+    </div>
+    <div class="controls">
+        <div class="control-group">
+            <label>Сложность:</label>
+            <select id="difficultySelect">
+                <option value="easy">Лёгкая</option>
+                <option value="medium" selected>Средняя</option>
+                <option value="hard">Сложная</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label>
+                <input type="checkbox" id="soundToggle" checked> Звук
+            </label>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Написать в чат...">
+        <button id="sendBtn">→</button>
+        <button id="donateBtn" class="donate-btn">💎</button>
+    </div>
+</div>
+
+<!-- Modal для донатов -->
+<div id="donateModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Отправить донат</h2>
+        <div class="donate-amounts">
+            <button class="donate-amount" data-amount="5">5₽</button>
+            <button class="donate-amount" data-amount="10">10₽</button>
+            <button class="donate-amount" data-amount="50">50₽</button>
+            <button class="donate-amount" data-amount="100">100₽</button>
+            <button class="donate-amount" data-amount="500">500₽</button>
+        </div>
+        <input type="text" id="donateMessage" placeholder="Сообщение (опционально)">
+        <button id="confirmDonate">Отправить</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
